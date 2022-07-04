@@ -69,7 +69,7 @@ def tir_api(did) :
                 "organizationInfo": {
                     "id": "837674480",
                     "legalName": "Tezotopia issuer by Talao",
-                    "currentAddress": "Tezotopia issuer by Talao",
+                    "currentAddress": "",
                     "vatNumber": "",
                     "website": "https://tezotopia.com/app",
                     "issuerDomain" : ["api.issuer.tezotopia.altme.io"]
