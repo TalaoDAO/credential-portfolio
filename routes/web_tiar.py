@@ -55,6 +55,27 @@ def tir_api(did) :
                 }
             }
         })
+    elif did in ["did:tz:tz1RuLH4TvKNpLy3AqQMui6Hys6c1Dvik8J5",
+                  "did:tz:tz2X3K4x7346aUkER2NXSyYowG23ZRbueyse",
+                  "did:ethr:0x61fb76ff95f11bdbcd94b45b838f95c1c7307dbd"] :
+        return jsonify({
+            "issuer": {
+                "preferredName": "Tezotopia issuer",
+                "did": ["did:tz:tz1RuLH4TvKNpLy3AqQMui6Hys6c1Dvik8J5",
+                 "did:tz:tz2X3K4x7346aUkER2NXSyYowG23ZRbueyse",
+                  "did:ethr:0x61fb76ff95f11bdbcd94b45b838f95c1c7307dbd"],
+                "eidasCertificatePem": [{}],
+                "serviceEndpoints": [{}, {}],
+                "organizationInfo": {
+                    "id": "837674480",
+                    "legalName": "Tezotopia issuer by Talao",
+                    "currentAddress": "Tezotopia issuer by Talao",
+                    "vatNumber": "",
+                    "website": "https://tezotopia.com/app",
+                    "issuerDomain" : ["api.issuer.tezotopia.altme.io"]
+                }
+            }
+        })
     elif did in ["did:ethr:0x6Ad8372F03d2b16701c9989d3043fE27C1f8e2FE".lower(), "did:tz:tz2CWTBwgUbs1BMXAjzUvrEk8gRhS6eLqzRD"] :
         return jsonify({
             "issuer": {
