@@ -68,7 +68,7 @@ def tir_api(did) :
                 "serviceEndpoints": [{}, {}],
                 "organizationInfo": {
                     "id": "837674480",
-                    "legalName": "Tezotopia issuer by Talao",
+                    "legalName": "Tezotopia issuer",
                     "currentAddress": "",
                     "vatNumber": "",
                     "website": "https://tezotopia.com/app",
@@ -94,7 +94,7 @@ def tir_api(did) :
             }
         })
     else :
-        logging.info("Issuer not found in the Talao registry")
+        logging.warning("Issuer not found in the Talao registry")
         return jsonify("Issuer not found") , 404
         
 

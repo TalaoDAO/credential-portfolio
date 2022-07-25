@@ -36,12 +36,9 @@ red= redis.Redis(host='localhost', port=6379, db=0)
 
 # Centralized  routes : modules in ./routes
 from routes import web_certificate
-#from routes import web_revocationlist
-#from r!outes import web_wallet_return_code
-from routes import web_register, web_issuer, web_wallet_api
+from routes import web_register, web_issuer
 from routes import web_data_user, web_skills, web_external, web_issuer_explore
-from routes import web_main, web_login, repository, web_credible, web_wallet_test, web_tiar, web_app, web_siopv2_issuer, web_siopv2_verifier
-from routes import web_display_VP
+from routes import web_main, web_login, repository, web_credible, web_tiar, web_app, web_siopv2_issuer, web_siopv2_verifier
 
 
 #BUNNEY Calum <calum.bunney@nexusgroup.com>
@@ -103,19 +100,14 @@ logging.info('start init routes')
 # Centralized @route
 web_register.init_app(app, red, mode)
 web_credible.init_app(app, red, mode)
-#web_wallet_test.init_app(app, red, mode)
-#web_wallet_api.init_app(app, red, mode)
 web_login.init_app(app, red,  mode)
 web_certificate.init_app(app, mode)
 web_external.init_app(app, mode)
 web_issuer_explore.init_app(app, mode)
 web_data_user.init_app(app,red,mode)
 web_issuer.init_app(app, mode)
-#web_display_VP.init_app(app, red, mode)
-#web_revocationlist.init_app(app, red, mode) see latyer use
 web_tiar.init_app(app)
 web_app.init_app(app, red, mode)
-#web_wallet_return_code.init_app(app, red, mode)
 web_siopv2_issuer.init_app(app, red, mode)
 web_siopv2_verifier.init_app(app, red, mode)
 
@@ -197,10 +189,6 @@ app.add_url_rule('/repository/publish',  view_func=repository.publish, methods =
 app.add_url_rule('/repository/create',  view_func=repository.create, methods = ['GET'], defaults={'mode' : mode})
 app.add_url_rule('/repository/get',  view_func=repository.get, methods = ['POST'], defaults={'mode' : mode})
 
-
-# centralized route for CCI API
-#app.add_url_rule('/api/v1/credential',  view_func=cci_api.credential_list, methods = ['GET'], defaults={'mode' : mode})
-#app.add_url_rule('/api/v1/resolver',  view_func=cci_api.resolver, methods = ['GET'], defaults={'mode' : mode})
 
 
 # Google universal link
